@@ -11,10 +11,17 @@ const getUsersController = async (req, res) => {
             res.status(404).json({message: "data not found"});
         }
         // Convert the users object to an array
-        const usersArray = Object.keys(users).map(key => ({
-            id: key,
-            ...users[key]
-        }));
+// Convert the users object to an array
+        let usersArray = [];
+        if (users) {
+            usersArray = Object.keys(users).map(key => ({
+                id: key,
+                ...users[key]
+            }));
+        } else {
+            res.status(404).json({message: "data not found"});
+        }
+
 
         // Return the users array as JSON response
         res.status(200).json(usersArray);
