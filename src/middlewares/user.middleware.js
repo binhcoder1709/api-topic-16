@@ -1,10 +1,8 @@
-const checkEmpty = (user) =>
-{
-    if(!user)
-    {
-        return false
-    }
-    return true
-}
+const checkEmpty = (user) => {
+  if (!user) {
+    return false;
+  }
+  return true;
+};
 
-export {checkEmpty}
+export { checkEmpty };
